@@ -73,6 +73,14 @@ ThreadSafety/InstanceVariableInClassMethod:
 Rails/Output:
   Exclude:
 
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+
 RSpec/DescribeClass:
   Exclude:
     - 'spec/lib/tasks/**/*'
