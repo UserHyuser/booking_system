@@ -1,0 +1,91 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-thread_safety
+
+AllCops:
+  TargetRubyVersion: 3.0.0
+  NewCops: enable
+  Exclude:
+    - 'bin/*'
+    - 'coverage/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns: ['\A#']
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+
+Metrics/ClassLength:
+  Exclude:
+
+Metrics/BlockLength:
+  Exclude:
+
+Metrics/AbcSize:
+  Max: 20
+  Exclude:
+
+Style/Documentation:
+  Enabled: false
+
+Style/FetchEnvVar:
+  Enabled: false
+
+Rails/DurationArithmetic:
+  Enabled: false
+
+Rails/EnvironmentVariableAccess:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 5
+
+RSpec/NestedGroups:
+  Max: 6
+  Exclude:
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec:
+  Language:
+    Includes:
+      Examples:
+        - run_test!
+        - include_examples
+        - it_behaves_like
+
+Lint/MissingSuper:
+  Exclude:
+
+# TODO: [RoR update] fix that
+ThreadSafety/InstanceVariableInClassMethod:
+  Enabled: false
+
+Rails/Output:
+  Exclude:
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/lib/tasks/**/*'
+
+# TODO: [RoR update] fix that
+RSpec/IndexedLet:
+  Enabled: false
+
+# TODO: [RoR update] fix that
+Rails/ThreeStateBooleanColumn:
+  Enabled: false
+
+RSpec/Rails/InferredSpecType:
+  Exclude:
+    - 'spec/models/**/*'
+    - 'spec/controllers/**/*'
