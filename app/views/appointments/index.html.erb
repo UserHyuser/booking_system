@@ -1,0 +1,13 @@
+<h1> My appointments </h1>
+
+
+<h2> Current events </h2>
+<ul>
+  <% @appointments.each do |appointment| %>
+  <li>
+    <h3><%= link_to appointment.event.name, event_path(appointment.event) %></h3>
+    <p><strong>date:</strong> <%= appointment.event.datetime %></p>
+    <p>tickets: <%= appointment.tickets_amount %></p>
+  </li>
+  <% end %>
+</ul>

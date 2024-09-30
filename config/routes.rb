@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resource :session
   resource :registration
+  resources :events
+  resources :appointments
 end

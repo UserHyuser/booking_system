@@ -30,11 +30,14 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   controllers:
     registrations:
-      user_created: "Signed up successully"
+      user_created: "Signed up successully."
     sessions:
-      user_login: "You've been sucessfully loged in"
-      user_logout: "You've been loged out"
-      user_login_failed: "Check credentials again"
+      user_login: "You've been sucessfully loged in."
+      user_logout: "You've been loged out."
+      user_login_failed: "Check credentials again."
+    appointments:
+      purchase_successful: "You've sucessfully made a purchase."
+      purchase_failed: "Your purchase has failed. Please try again."
+      not_enough_tickets: "Not enough tickets. Please try again."

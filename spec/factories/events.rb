@@ -13,10 +13,10 @@
 #
 FactoryBot.define do
   factory :event do
-    name { "MyString" }
-    description { "MyString" }
-    location { "MyString" }
-    datetime { "2024-09-29 12:32:04" }
-    tickets_available { 1 }
+    name { Faker::Music::RockBand.name }
+    description { Faker::Lorem.sentence }
+    location { Faker::Address.full_address }
+    datetime { DateTime.current + rand(1..10).days }
+    tickets_available { rand(1..100) }
   end
 end

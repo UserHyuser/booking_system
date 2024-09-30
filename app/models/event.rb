@@ -12,4 +12,5 @@
 #  updated_at        :datetime         not null
 #
 class Event < ApplicationRecord
+  scope :upcoming, -> { where(datetime: Time.current..) }
 end

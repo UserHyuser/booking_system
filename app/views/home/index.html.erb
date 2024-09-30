@@ -1,1 +1,18 @@
 <h1> Homepage </h1>
+
+<% Rails.cache.fetch('cache_events_main', expires_in: 1.minute) do %>
+
+  <h2> Current events </h2>
+  <ul>
+    <% Event.upcoming.each do |event| %>
+    <li>
+      <h3><%= link_to event.name, event_path(event) %></h3>
+      <p><strong>Description:</strong> <%= event.description %></p>
+      <p><strong>Location:</strong> <%= event.location %></p>
+      <p><strong>Date and Time:</strong> <%= event.datetime.strftime("%B %d, %Y %I:%M %p") %></p>
+      <p><strong>Tickets Available:</strong> <%= event.tickets_available %></p>
+    </li>
+    <% end %>
+  </ul>
+  
+<% end %>
