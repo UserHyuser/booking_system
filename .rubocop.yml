@@ -93,7 +93,3 @@ RSpec/IndexedLet:
 Rails/ThreeStateBooleanColumn:
   Enabled: false
 
-RSpec/Rails/InferredSpecType:
-  Exclude:
-    - 'spec/models/**/*'
-    - 'spec/controllers/**/*'
