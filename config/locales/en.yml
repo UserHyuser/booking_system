@@ -37,6 +37,7 @@ en:
       user_login: "You've been sucessfully loged in."
       user_logout: "You've been loged out."
       user_login_failed: "Check credentials again."
+      user_login_required: "You're not logged in."
     appointments:
       purchase_successful: "You've sucessfully made a purchase."
       purchase_failed: "Your purchase has failed. Please try again."

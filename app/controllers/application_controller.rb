@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def authenticate_user!
+    return if user_signed_in?
+
+    redirect_to new_session_path, alert: I18n.t("controllers.sessions.user_login_required")
+  end
+
   def login(user)
     Current.user = user
     reset_session

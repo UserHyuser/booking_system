@@ -85,11 +85,12 @@ RSpec/DescribeClass:
   Exclude:
     - 'spec/lib/tasks/**/*'
 
-# TODO: [RoR update] fix that
 RSpec/IndexedLet:
   Enabled: false
 
-# TODO: [RoR update] fix that
 Rails/ThreeStateBooleanColumn:
   Enabled: false
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'

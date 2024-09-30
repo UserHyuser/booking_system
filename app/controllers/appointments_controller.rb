@@ -1,4 +1,6 @@
 class AppointmentsController < ApplicationController
+  before_action :authenticate_user!
+
   # GET /appointments
   def index
     @appointments = current_user.appointments.includes(:event)
