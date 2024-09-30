@@ -14,4 +14,10 @@
 #
 class User < ApplicationRecord
   has_secure_password
+
+  validates :username, presence: true
+  normalizes :username, with: ->(username) { username.downcase }
+
+  # TODO: Password reset
+  # generates_token_for(:password_reset, expires_in: 10.minutes) { password_salt }
 end

@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  controllers:
+    registrations:
+      user_created: "Signed up successully"
+    sessions:
+      user_login: "You've been sucessfully loged in"
+      user_logout: "You've been loged out"
+      user_login_failed: "Check credentials again"
