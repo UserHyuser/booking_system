@@ -12,10 +12,9 @@
 #
 #  index_users_on_username  (username) UNIQUE
 #
-require "test_helper"
-
-class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+FactoryBot.define do
+  factory :user do
+    username { "MyString" }
+    password_digest { "MyString" }
+  end
 end

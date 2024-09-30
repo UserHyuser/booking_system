@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BookingSystem</title>
+    <title>Booking System</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +10,25 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= button_to "Log out", session_path, method: :delete %>
+    <% else %>
+      <div style="display: flex; gap: 10px;">
+        <%= button_to "Log in", new_session_path, method: :get %>
+        <%= button_to "Sign up", new_registration_path, method: :get %>
+      </div>
+    <% end %>
+
+    <div style="display: flex; gap: 10px;">
+      <%= link_to 'Main page', root_path %>
+      <% if user_signed_in? %>
+        <%= link_to 'My appointments', appointments_path %>
+      <% end %>
+    </div>
+
+    <div> <%= notice %> </div>
+    <div> <%= alert %> </div>
+
     <%= yield %>
   </body>
 </html>

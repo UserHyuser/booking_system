@@ -1,0 +1,32 @@
+<h1><%= @event.name %></h1>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.datetime %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong>Tickets available:</strong>
+  <%= @event.tickets_available %>
+</p>
+
+<%= form_with url: appointments_path, method: :post do |form| %>
+  <div class="field">
+    <%= form.label :tickets_amount, "Number of Tickets: " %>
+    <%= form.number_field :tickets_amount, min: 1, max: @event.tickets_available, value: 1 %>
+  </div>
+  <%= form.hidden_field :event_id, value: @event.id %>
+  <div class="actions">
+    <%= form.submit "Buy Tickets" %>
+  </div>
+<% end %>
